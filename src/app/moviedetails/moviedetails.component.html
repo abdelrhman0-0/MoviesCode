@@ -1,0 +1,80 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 1)" size = "medium" color = "#fff" type = "ball-clip-rotate-multiple" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<div class="container pt-5 main">
+        <div class="row mt-5 pt-5 align-items-center justify-content-between">
+            <div class="col-8 col-md-4 ">
+                <h1>{{movieDetails.title||movieDetails.name}}</h1>
+
+            </div>
+            <div *ngIf="!isPerson" class=" col-4 col-md-2">
+                <div  class=" d-flex align-items-center justify-content-center" >
+                    <div class="pe-1">
+                        <i class="fas fa-star"></i>
+        
+                    </div>
+                    <div>
+                        <span class="vote">{{movieDetails.vote_average}} <span class="ten">/ 10</span></span>
+                        <h6 class="ten">{{movieDetails.vote_count}}</h6>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-0 col-md-6"></div>
+            
+        </div>
+        
+
+        
+        
+        
+
+    
+    <!-- <div *ngIf="isPerson">
+        <h1 class="pe-5 pt-5">{{movieDetails.name}}</h1>
+
+    </div> -->
+
+    <span class=" mb-1 ten " *ngIf="isPerson">Whole Name: {{movieDetails.also_known_as[0]}}<br></span>
+    <span class=" mb-1 ten" *ngIf="isPerson">Place Of Birth: {{movieDetails.place_of_birth}}<br></span>
+    <span class=" mb-5 ten" *ngIf="isPerson">Birthday: {{movieDetails.birthday}}</span>
+    <span class=" mb-1 ten " *ngIf="!isPerson">Original Title: {{movieDetails.original_name||movieDetails.original_title}}<br></span>
+    <span class=" mb-5 ten"*ngIf="!isPerson" >{{movieDetails.last_air_date||movieDetails.release_date}}</span>
+
+<div class="row py-5 g-1 ">
+    <div class="col-md-3  ">
+            <img class="w-100 " [src]="isPerson?imgPre+movieDetails.profile_path:imgPre+movieDetails.poster_path" alt="movie-poster">
+    </div>
+
+    <div class="col-md-9" *ngIf="!isPerson">
+        <iframe  width="100%" height="100%"
+            [src]="urlSafe">
+            
+        </iframe>
+        
+    </div>
+
+    <div class="col-md-9 ps-md-5 py-5 py-md-0" *ngIf="isPerson">
+        <div>
+            <h4 class="h2">Bio:</h4>
+            <p>{{movieDetails.biography}}</p>
+        </div>
+        
+    </div>
+   
+</div>
+<div  class="d-flex pt-2 pb-4" *ngIf="!isPerson">
+    <button *ngFor="let genre of movieDetails.genres" class="me-2 rounded-pill px-md-3 py-md-2 px-2 py-1 btn btn-outline-light">{{genre.name}}</button>
+
+</div>
+
+    <div class="pb-5 " *ngIf="!isPerson">
+        <div>
+            
+            <h4 class="pt-2 h2">Overview:</h4>
+            <p class="pt-1">{{movieDetails.overview}}</p>
+        </div>
+        
+    </div>
+    
+
+
+</div>

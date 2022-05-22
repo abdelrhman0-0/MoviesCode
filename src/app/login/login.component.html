@@ -1,0 +1,18 @@
+<section id="login" class=" d-flex justify-content-center align-items-center my-5">
+    <div class="container">
+        <form class="w-75 m-auto " [formGroup]="loginForm" (ngSubmit)="pressSubmit(loginForm)">
+        <h2>Login Now</h2>
+        
+        <!-- <div *ngIf="error" class=" mt-2 alert alert-danger">{{error}}</div> -->
+
+        <input formControlName="email" class="form-control p-2 mt-4" type="email" placeholder="email">
+       
+
+        <input formControlName="password" class="form-control p-2 mt-4" type="password" placeholder="Password">
+       
+
+        <button [disabled]= "loginForm.invalid" type="submit" class="btn btn-dark mt-3 mb-5 py-2 px-3">Login</button>
+    </form>
+    </div>
+    
+</section>

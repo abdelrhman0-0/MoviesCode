@@ -1,0 +1,124 @@
+$darkBlue:#1A252F;
+$yellow :#F0A500;
+
+h2{
+    font-size: 2.2rem;
+}
+
+.rate{
+    height: 1.5rem;
+    width: 1.5rem;
+    background-color:$yellow ;
+    color: #000;
+    box-shadow: 2px 2px 10px 0.4px rgb(26, 26, 26);
+    transition: all 0.4s;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%,-50%);
+    span{
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+}
+
+.active{
+    background-color: $yellow !important;
+    color: #333 !important;
+}
+.active-img{
+    transition: all 0.4s;
+    h3{
+        transition: all 0.4s;
+        
+        // border-radius: 0.5rem;
+        
+        
+    }
+   
+    
+}
+
+.heading{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+}
+.second-svg{
+    transform: rotateY(180deg);
+}
+.img-container{
+    width: 100%;
+    margin: auto;
+}
+svg{
+    // position: relative;
+    
+    width: 100%;
+    //    z-index: 3;
+    //     top: -100px;
+    //     left: -100px;
+}
+.main{
+    flex-direction: row-reverse !important;
+    justify-content: center;
+    
+}
+@media screen and (max-width:768px){
+    .img-container{
+        width: 75%;
+        margin: auto;
+    }
+    .active-img{
+        transition: all 0.4s;
+        h3{
+            transition: all 0.4s;
+            // border-radius: 0.5rem;
+            
+            
+        }
+        
+            .rate{
+                height: 2.5rem;
+                width: 2.5rem;
+                
+                box-shadow: 2px 2px 10px 0.4px rgb(26, 26, 26);
+                opacity: 1;
+            }
+        
+    }
+    
+}
+@media screen and (min-width:769px) {
+   
+    .active-img{
+        transition: all 0.4s;
+        h3{
+            transition: all 0.4s;
+            // border-radius: 0.5rem;
+            
+            
+        }
+        &:hover{
+            transform: scale(200%);
+            position: relative;
+            z-index: 3;
+            h3{
+                text-shadow: 2px 2px 5px rgb(12, 12, 12);
+            }
+            img{
+                box-shadow: 5px 5px 10px 0.4px rgb(26, 26, 26);
+    
+            }
+            .rate{
+                box-shadow: 2px 2px 10px 0.4px rgb(26, 26, 26);
+                opacity: 1;
+            }
+        }
+    }
+}

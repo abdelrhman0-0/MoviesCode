@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg shadow">
+    <div class="container">
+      <a [routerLink]="['/home']"  class="navbar-brand logo">MOVASA</a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li >
+                    <a class="mb-lg-0" *ngIf="isLogged" (click)="hide()" routerLink="home" routerLinkActive="active-link">Home</a>
+                </li>
+                <li>
+                    <a class=" mb-lg-0" *ngIf="isLogged" (click)="hide()" routerLink="movies"routerLinkActive="active-link">Movies</a>
+                </li>
+                <li>
+                    <a class="mb-lg-0" *ngIf="isLogged" (click)="hide()" routerLink="tv"routerLinkActive="active-link">Tv Shows</a>
+                </li>
+                <li>
+                    <a class="mb-lg-0" *ngIf="isLogged" (click)="hide()" routerLink="people"routerLinkActive="active-link">People</a>
+                </li>
+                
+                
+            </ul>
+        
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="mb-lg-0">
+                    <a><i class="fab fa-facebook-f"></i></a>
+                    <a><i class="fab fa-twitter"></i></a>
+                    <a><i class="fab fa-instagram"></i></a>
+                    <a><i class="fab fa-github"></i></a>
+                </li>
+                <li>
+                    <a class="mb-lg-0" *ngIf="!isLogged" (click)="hide()" routerLink="/login">Login</a>
+                </li>
+                <li>
+                    <a class="mb-lg-0" *ngIf="!isLogged" (click)="hide()" routerLink="/register">Register</a>
+                </li>
+                <li>
+                    <a (click)="logOut()" *ngIf="isLogged" (click)="hide()" routerLink="/login">Logout</a>
+                </li>
+            </ul>
+       
+      </div>
+    </div>
+  </nav> 

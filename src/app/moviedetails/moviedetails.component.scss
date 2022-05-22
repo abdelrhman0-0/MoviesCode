@@ -1,0 +1,30 @@
+$yellowColor:#f0a500;
+$mutedColor:rgb(194, 194, 194);
+
+.fa-star{
+    font-size: 1.5rem;
+    color: $yellowColor;
+}
+.vote{
+    color: $yellowColor;
+    font-size: 1.5rem;
+    
+}
+.ten{
+    color: $mutedColor !important;
+    font-size: 1rem !important;
+}
+.main{
+    width: 100%;
+}
+
+@media screen and(max-width:768px){
+    html{
+        font-size: 13px !important;
+    }
+    .main{
+        width: 80% !important;
+        margin: auto !important;
+    }
+    
+}

@@ -1,0 +1,60 @@
+nav{
+    // background-color: rgba($color: #1A252F, $alpha: 1);
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba($color: #1A252F, $alpha: 0.5);
+    .logo{
+        font-size: 2rem;
+        color: #f0a500 !important;
+        font-weight: 900;
+    }
+    button.navbar-toggler{
+        &:focus{
+            
+            box-shadow: none !important;
+        }
+    }
+    .fa-bars{
+        font-size: 1.5rem;
+        color: #f0a500;
+        
+    }
+    a{
+        color: #fff;
+        text-decoration: none;
+        i{
+            cursor: pointer;
+        }
+    }
+    ul{
+        list-style-type: none;
+        a{
+            margin-left: 20px;
+        }
+        
+    }
+}
+
+.active-link{
+    background-color: #1A252F;
+    padding: 5px 10px;
+    // color: #f0a500 !important;
+    border-radius: 0.5rem;
+    transition: all 0.4s;
+    
+
+}
+
+@if isLogged == false {
+    .navbar-toggler{
+        display: none !important;
+
+    }
+    .navbar-collapse{
+        display: flex !important;
+    }
+}
+

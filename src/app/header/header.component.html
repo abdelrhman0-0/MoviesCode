@@ -1,0 +1,27 @@
+<header>
+    <!-- <img class="w-100" src="" alt="number1-movie"> -->
+    <div class="layer">
+        <div class="container">
+          
+            <h1 class="pb-2 h2">Top Trending Movies</h1>
+
+            <owl-carousel-o [options]="customOptions" (dragging)="isDragging = $event.dragging">
+
+                <ng-container   *ngFor="let movie of headerTrendingMovies let i = index">
+                  
+                  <ng-template carouselSlide [id]="movie.id" class="postision-relative">
+                    <div [style.cursor]="isDragging?'grab':'pointer'" [owlRouterLink]="['/moviedetails',movie.id,'movie-poster']" [stopLink]="isDragging">
+                      <img [src]="imgPre+movie.poster_path" alt="movie-poster" [title]="movie.title">
+                      <span class="trend-num" >
+                          {{i+1}}
+                      </span>
+                    </div>
+                  </ng-template>
+                  
+                </ng-container>
+            
+              </owl-carousel-o>
+        </div>
+
+    </div>
+</header>
